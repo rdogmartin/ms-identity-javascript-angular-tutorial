@@ -14,30 +14,30 @@ const isIE = window.navigator.userAgent.indexOf("MSIE ") > -1 || window.navigato
  * To learn more about user flows, visit https://docs.microsoft.com/en-us/azure/active-directory-b2c/user-flow-overview
  * To learn more about custom policies, visit https://docs.microsoft.com/en-us/azure/active-directory-b2c/custom-policy-overview
  */
-export const b2cPolicies = {
+ export const b2cPolicies = {
     names: {
-        signUpSignIn: "b2c_1_susi_reset_v2",
-        editProfile: "b2c_1_edit_profile_v2"
+        signUpSignIn: "B2C_1_aegis-fec-filer-signup-signin",
+        editProfile: "B2C_1_aegis-fec-filer-edit-profile"
     },
     authorities: {
         signUpSignIn: {
-            authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_susi_reset_v2",
+            authority: "https://mooreholdingsus.b2clogin.com/mooreholdingsus.onmicrosoft.com/B2C_1_aegis-fec-filer-signup-signin",
         },
         editProfile: {
-            authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_edit_profile_v2"
+            authority: "https://mooreholdingsus.b2clogin.com/mooreholdingsus.onmicrosoft.com/B2C_1_aegis-fec-filer-edit-profile",
         }
     },
-    authorityDomain: "fabrikamb2c.b2clogin.com"
+    authorityDomain: "mooreholdingsus.b2clogin.com"
 };
 
 /**
- * Configuration object to be passed to MSAL instance on creation. 
+ * Configuration object to be passed to MSAL instance on creation.
  * For a full list of MSAL.js configuration parameters, visit:
- * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/configuration.md 
+ * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/configuration.md
  */
  export const msalConfig: Configuration = {
     auth: {
-        clientId: '9067c884-9fa6-414f-9aa4-a565b1cb46be', // This is the ONLY mandatory field that you need to supply.
+        clientId: '2f0ce2ea-cca9-4c27-b302-fe969764a210', // This is the ONLY mandatory field that you need to supply.
         authority: b2cPolicies.authorities.signUpSignIn.authority, // Defaults to "https://login.microsoftonline.com/common"
         knownAuthorities: [b2cPolicies.authorityDomain], // Mark your B2C tenant's domain as trusted.
         redirectUri: '/', // Points to window.location.origin. You must register this URI on Azure portal/App Registration.
